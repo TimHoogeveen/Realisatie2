@@ -17,13 +17,15 @@
     <link rel="stylesheet" href="">
     </head>
     <body>
-            <?php
-              $stmt = $conn->prepare('SELECT * FROM `hond` WHERE `user_ID` = '. $_SESSION['user'] .'');
-              $stmt->execute();
-              $fetch = $stmt->fetch();
-            ?>
+    <div id="menugebied">
+                <br>
+                        <a class="button1" href="./dashboard.php">Home</a><br>
+                        <a class="button1" href="./invoeren.php">Stats Invoeren</a><br>
+                        <a class="button1" href="profiel.php">Mijn profiel</a><br>
+                        <a class="button1" href="logout.php">Uitloggen</a> 
+            </div>
                 <?php
-                    $sql = 'SELECT dogs_ID, hondenfoto, naam, leeftijd, ras FROM hond WHERE `user_ID` = '. $_SESSION['user'] .'';
+                    $sql = 'SELECT naam, goals, assists FROM user';
 
                     try{
                         $stmt = $conn->query($sql);
@@ -39,35 +41,17 @@
                 <table width="100%">
                     <thead>
                         <tr>
-                            <th>Voornaam</th>
-                            <th>Achternaam</th>
-                            <th>Positie</th>
+                            <th>Naam</th>
                             <th>Goals</th>
                             <th>Assists</th>
-                            <th>Gele kaarten</th>
-                            <th>Rode kaarten</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
                             <tr>
-                                <td><?php echo ("<img src='./uploads/honden/".$row['hondenfoto']."'style='border-radius:5px; margin-bottom:5px;' width='100px' >"); ?></td>
                                 <td><?php echo ($row['naam']); ?></td>
-                                <td><?php echo ($row['leeftijd']); ?></td>
-                                <td><?php echo ($row['ras']); ?></td>
-                                <td>
-                                    <form method="POST" class="dog-input-form">
-                                        <input type="number" class="fieldprofile" id="doginput" name="age" class="dog-input-purple" value=<?php echo $row['leeftijd']?>>
-                                        <input type="submit" class="button" name="dog_update" value="Update" class="dog_update_button">
-                                        <input type="hidden" name="dogs_ID" class="dog-input-purple" value=<?php echo $row['dogs_ID']?>>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form method="POST" class="dog-delete-form">
-                                        <input type="submit" class="button" name="dog_delete" value="Verwijderen" class="dog_delete_button">
-                                        <input type="hidden" name="dogs_ID" class="dog-input-purple" value=<?php echo $row['dogs_ID']?>>
-                                    </form>
-                                </td>
+                                <td><?php echo ($row['goals']); ?></td>
+                                <td><?php echo ($row['assists']); ?></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
