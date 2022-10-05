@@ -15,6 +15,7 @@
 			if($row > 0) {
 				$_SESSION['username'] = $fetch['gebruikersnaam'];
 				$_SESSION['user'] = $fetch['user_ID'];
+				$_SESSION["ROL"] = $result["is_admin"];
 				header("location: dashboard.php");
 			} else{
 				echo "

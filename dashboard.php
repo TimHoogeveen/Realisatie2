@@ -3,10 +3,10 @@
 	require 'connect.php';
 	session_start();
 
-  $id = $_SESSION['user'];
-  $sql = $conn->prepare("SELECT * FROM `user` WHERE `user_ID`='$id'");
-  $sql->execute();
-  $fetch = $sql->fetch();
+  //$id = $_SESSION['user'];
+  //$sql = $conn->prepare("SELECT * FROM `user` WHERE `user_ID`='$id'");
+  //$sql->execute();
+  //$fetch = $sql->fetch();
 ?>
 <html>
     <head>
@@ -19,10 +19,14 @@
     <body>
     <div id="menugebied">
                 <br>
-                        <a class="button1" href="./dashboard.php">Home</a><br>
-                        <a class="button1" href="./invoeren.php">Stats Invoeren</a><br>
-                        <a class="button1" href="profiel.php">Mijn profiel</a><br>
-                        <a class="button1" href="logout.php">Uitloggen</a> 
+                        <a class="button1" href="dashboard.php.php">Home</a><br>
+                        <?php if($_SESSION["ROL"] == 1) : ?>
+                    <a class="button1" href="<?= ('./invoeren.php') ?>"> Stats invoeren</a>
+                    <a class="button1" href="<?= ('./logout.php') ?>"> Uitloggen</a>
+                <?php else : ?>
+                    <a class="button1" href="<?= ('./logout.php') ?>"> Uitloggen</a>
+                <?php endif; ?>
+                         
             </div>
                 <?php
                     $sql = 'SELECT naam, goals, assists FROM user';
