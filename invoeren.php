@@ -3,7 +3,6 @@
 	require 'connect.php';
 	session_start();
 
-  $id = $_SESSION['user'];
   $sql = $conn->prepare("SELECT * FROM `user` WHERE `user_ID`='$id'");
   $sql->execute();
   $fetch = $sql->fetch();
@@ -12,7 +11,6 @@
 		if($_POST['goals'] != ""){
 			try{
         $assists = $_POST['goals'];
-        $user_ID = $_POST['user_ID'];
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$sql = "UPDATE user SET goals='$goals' WHERE user_ID='$user_ID'";
 				$conn->exec($sql);
@@ -35,7 +33,6 @@
 		if($_POST['assists'] != ""){
 			try{
         $assists = $_POST['assists'];
-        $user_ID = $_POST['user_ID'];
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$sql = "UPDATE user SET assists='$assists' WHERE user_ID='$user_ID'";
 				$conn->exec($sql);
