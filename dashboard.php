@@ -21,9 +21,10 @@
                 <br>
                         <a class="button1" href="dashboard.php.php">Home</a><br>
                         <?php if($_SESSION["ROL"] == 1) : ?>
-                    <a class="button1" href="<?= ('./invoeren.php') ?>"> Stats invoeren</a>
+                    <a class="button1" href="<?= ('./invoeren.php') ?>"> Stats invoeren</a><br>
                     <a class="button1" href="<?= ('./logout.php') ?>"> Uitloggen</a>
                 <?php else : ?>
+                    <a class="button1" href="<?= ('./invoeren.php') ?>">Stats invoeren</a><br>
                     <a class="button1" href="<?= ('./logout.php') ?>"> Uitloggen</a>
                 <?php endif; ?>
                          
