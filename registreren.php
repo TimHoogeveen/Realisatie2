@@ -12,7 +12,13 @@
 <form action="./registreren_query.php" method="post" enctype="multipart/form-data">
           Naam<br><input required type="text" class="field" name="naam" placeholder="Vul hier je naam in!"><br><br>
           E-mailadres<br><input required type="email" class="field" name="email"
-            placeholder="Vul hier je e-mailadres in!"><br><br>       
+            placeholder="Vul hier je e-mailadres in!"><br><br>
+            Team<br><select name="teams" id="teams">
+                    <option value="be fair">Be Fair</option>
+                    <option value="jodan boys">Jodan Boys</option>
+                    <option value="sportlust">Sportlust</option>
+                    <option value="donk">Donk</option>
+            </select><br><br>  
             Wachtwoord<br><input required type="password" class="field" name="wachtwoord"
             placeholder="Vul hier je wachtwoord in!"><br><br><br>
           <input type="submit" class="button" name="inschrijven" value="Inschrijven">

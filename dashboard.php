@@ -30,7 +30,7 @@
                          
             </div>
                 <?php
-                    $sql = 'SELECT naam, goals, assists FROM user';
+                    $sql = 'SELECT naam, goals, assists, team FROM user';
 
                     try{
                         $stmt = $conn->query($sql);
@@ -49,6 +49,7 @@
                             <th>Naam</th>
                             <th>Goals</th>
                             <th>Assists</th>
+                            <th>Team</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,6 +58,7 @@
                                 <td><?php echo ($row['naam']); ?></td>
                                 <td><?php echo ($row['goals']); ?></td>
                                 <td><?php echo ($row['assists']); ?></td>
+                                <td><?php echo ($row['team']); ?></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
