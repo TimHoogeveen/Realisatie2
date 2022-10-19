@@ -10,7 +10,7 @@
 ?>
 <html>
     <head>
-    <title>Dashboard</title>
+    <title>Donk</title>
     <link rel="icon" type="image/x-icon" href="">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -30,7 +30,7 @@
                          
             </div>
                 <?php
-                    $sql = 'SELECT naam, goals, assists, team FROM user';
+                    $sql = "SELECT naam, goals, assists FROM user WHERE team = 'Donk'";
 
                     try{
                         $stmt = $conn->query($sql);
@@ -49,7 +49,6 @@
                             <th>Naam</th>
                             <th>Goals</th>
                             <th>Assists</th>
-                            <th>Team</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,7 +57,6 @@
                                 <td><?php echo ($row['naam']); ?></td>
                                 <td><?php echo ($row['goals']); ?></td>
                                 <td><?php echo ($row['assists']); ?></td>
-                                <td><?php echo ($row['team']); ?></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>

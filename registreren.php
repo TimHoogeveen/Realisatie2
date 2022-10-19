@@ -14,10 +14,10 @@
           E-mailadres<br><input required type="email" class="field" name="email"
             placeholder="Vul hier je e-mailadres in!"><br><br>
             Team<br><select name="teams" id="teams">
-                    <option value="be fair">Be Fair</option>
-                    <option value="jodan boys">Jodan Boys</option>
-                    <option value="sportlust">Sportlust</option>
-                    <option value="donk">Donk</option>
+                    <option value="Be Fair">Be Fair</option>
+                    <option value="Jodan Boys">Jodan Boys</option>
+                    <option value="Sportlust">Sportlust '46</option>
+                    <option value="Donk">Donk</option>
             </select><br><br>  
             Wachtwoord<br><input required type="password" class="field" name="wachtwoord"
             placeholder="Vul hier je wachtwoord in!"><br><br><br>
