@@ -45,13 +45,28 @@
                         <a class="button1" href="./invoeren.php">Stats Invoeren</a><br>
                         <a class="button1" href="profiel.php">Mijn profiel</a><br>
                         <a class="button1" href="logout.php">Uitloggen</a> 
-            </div>
-          <br><br><h5><?php echo $fetch['naam']; ?></h5></div><br>
-          <div id="info">E-mail adres:</div>
-          <form method="POST">
+            </div><br>
           <div id="gegevens">
-            <input type="email" class="fieldprofile" name="email-update" placeholder="E-mail adres" value=<?php echo $fetch['email'] ?>>
+            <table>
+              <tr>
+                <td><h5>Naam:</h5></td>
+                <td><?php echo $fetch['naam']?></td>
+              </tr>
+              <tr>
+                <td><h5>E-mail:</h5></td>
+                <td><?php echo $fetch['email']?></td>
+              </tr>
+              <tr>
+                <td><h5>Team:</h5></td>
+                <td><?php echo $fetch['team']?></td>
+              </tr>
+              <tr>
+                <td><h5>Goals:</h5></td>
+                <td><?php echo $fetch['goals']?></td>
+              </tr>
+              <tr>
+                <td><h5>Assists:</h5></td>
+                <td><?php echo $fetch['assists']?></td>
+              </tr>
+            </table>
           </div><br>
-          <input type="submit" name="update-profiel" class="button" value="Updaten">
-        </form>
-                
