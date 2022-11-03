@@ -12,4 +12,5 @@
 		$stmt->execute();
 		header("location: ./inloggen.php");
 	}
+	/* */
 ?>

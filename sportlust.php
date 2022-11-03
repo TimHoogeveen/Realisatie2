@@ -2,11 +2,6 @@
 <?php
 	require 'connect.php';
 	session_start();
-
-  //$id = $_SESSION['user'];
-  //$sql = $conn->prepare("SELECT * FROM `user` WHERE `user_ID`='$id'");
-  //$sql->execute();
-  //$fetch = $sql->fetch();
 ?>
 <html>
     <head>

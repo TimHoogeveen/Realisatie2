@@ -24,6 +24,4 @@
                   <input type="button" class="button" name="inschrijven" value="Inschrijven">
               </a>
             </form>
-        
-        
     </body>

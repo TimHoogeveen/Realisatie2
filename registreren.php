@@ -26,3 +26,4 @@
             <input type="button" class="button" name="annuleren" value="Terug naar inloggen">
           </a>
 </form>
+</html>
